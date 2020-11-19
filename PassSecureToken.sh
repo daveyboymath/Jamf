@@ -37,7 +37,7 @@ if [[ $output == *"Done"* ]]; then
     ###Command used to provide the user a secureToken. The admin user must have a secure token or this command will not work.###
     ###You can always check the JAMF policy logs to see if the user is experiencing an issue.###################################
     ############################################################################################################################
-	sudo sysadminctl -adminUser "$adminUser" -adminPassword "$adminPassword" -secureTokenOn $userName -password $userPassword
+	sysadminctl -adminUser "$adminUser" -adminPassword "$adminPassword" -secureTokenOn $userName -password $userPassword
     
     ##############################
     ###GUI dialog for the user.###
