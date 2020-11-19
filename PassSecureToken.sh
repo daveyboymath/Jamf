@@ -29,9 +29,9 @@ output=$(sudo sysadminctl -adminUser "$adminUser" -adminPassword "$adminPassword
 ###Error handling to see if the password entered is the same password used to log into the machine.###
 ######################################################################################################
 
-#############################################################################################
+##########################################################################################
 ###Searches for the output "Done". If this exist then the sysadminctl command will run.###
-#############################################################################################
+##########################################################################################
 if [[ $output == *"Done"* ]]; then
     ############################################################################################################################
     ###Command used to provide the user a secureToken. The admin user must have a secure token or this command will not work.###
@@ -51,3 +51,8 @@ else
     title='MacOS FileVault Encryption'
 	osascript -e "display dialog \"The password entered did not match your password on this computer! Please quit and re-run the Self-Service policy to try again.\" buttons {\"Quit (Your password was not synced!)\"} default button \"Quit (Your password was not synced!)\" with title \"$title\""
 fi
+
+#######################################
+###Change the userPassword variable.###
+#######################################
+userPassword="NiceTry"
