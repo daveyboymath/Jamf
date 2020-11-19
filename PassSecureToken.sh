@@ -51,8 +51,3 @@ else
     title='MacOS FileVault Encryption'
 	osascript -e "display dialog \"The password entered did not match your password on this computer! Please quit and re-run the Self-Service policy to try again.\" buttons {\"Quit (Your password was not synced!)\"} default button \"Quit (Your password was not synced!)\" with title \"$title\""
 fi
-
-#######################################
-###Change the userPassword variable.###
-#######################################
-userPassword="NiceTry"
