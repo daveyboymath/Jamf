@@ -30,14 +30,14 @@ output=$(sudo sysadminctl -adminUser "$adminUser" -adminPassword "$adminPassword
 ######################################################################################################
 
 #############################################################################################
-###Searches for the output "Done". If this exist then the sysadminctl command will be ran.###
+###Searches for the output "Done". If this exist then the sysadminctl command will run.###
 #############################################################################################
 if [[ $output == *"Done"* ]]; then
-	############################################################################################################################
+    ############################################################################################################################
     ###Command used to provide the user a secureToken. The admin user must have a secure token or this command will not work.###
     ###You can always check the JAMF policy logs to see if the user is experiencing an issue.###################################
     ############################################################################################################################
-	sysadminctl -adminUser "$adminUser" -adminPassword "$adminPassword" -secureTokenOn $userName -password $userPassword
+    sysadminctl -adminUser "$adminUser" -adminPassword "$adminPassword" -secureTokenOn $userName -password $userPassword
     
     ##############################
     ###GUI dialog for the user.###
@@ -45,7 +45,7 @@ if [[ $output == *"Done"* ]]; then
     title='MacOS FileVault Encryption'
 	osascript -e "display dialog \"Your password has been successfully synced with FileVault!\" buttons {\"OK\"} default button \"OK\" with title \"$title\""
 else
-	##############################
+    ##############################
     ###GUI dialog for the user.###
     ##############################
     title='MacOS FileVault Encryption'
